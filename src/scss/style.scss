@@ -1,0 +1,94 @@
+$bgColor: #24292e;
+$text: #fff;
+
+@import './fonts.scss';
+@import './sectionHeader.scss';
+@import './sidebar.scss';
+@import './feedbackSidebar.scss';
+@import './header.scss';
+@import './services.scss';
+@import './brandsRepair.scss';
+@import './techRepair.scss';
+@import './prices.scss';
+@import './footer.scss';
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'TTLakesRegular';
+  background-color: #f8f8f8;
+  position: relative;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+.wrapper {
+  display: flex;
+  & > div {
+    width: 100%;
+  }
+}
+.main {
+  border-bottom: 1px solid #d9fff5;
+  // display: flex;
+  padding: 24px 16px 50px 16px;
+  // & > div {
+  //   flex: 0;
+  // }
+}
+.section:not(:last-child) {
+  margin-bottom: 16px;
+}
+.overlay {
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+  }
+}
+.swiper {
+  margin-right: -16px !important;
+  padding-right: 16px !important;
+}
+.no-on-mobile {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  @media (min-width: 1120px) {
+    display: none;
+  }
+}

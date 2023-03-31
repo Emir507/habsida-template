@@ -1,0 +1,106 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 200ms;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 24px 32px 24px;
+  overflow-y: scroll;
+
+  @media (min-width: 768px) {
+    width: 320px;
+  }
+  @media (min-width: 1120px) {
+    position: static;
+    transform: unset;
+    overflow: unset;
+    height: unset;
+    min-height: 100%;
+  }
+}
+.sidebar--visible {
+  transform: translateX(0);
+  box-shadow: 6px 0px 19px 0px rgba(0, 0, 0, 0.4);
+}
+.sidebar__buttons {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar .nav-link .nav-link__link {
+  margin-right: 16px;
+}
+.nav-link {
+  &--hidden-on-desktop {
+    @media (min-width: 1120px) {
+      display: none !important;
+    }
+  }
+}
+.sidebar__menu {
+  margin-left: -24px;
+}
+.sidebar__menu li:not(:last-child) {
+  margin-bottom: 32px;
+}
+.sidebar__menu li {
+  transition: 200ms;
+  cursor: pointer;
+  padding-left: 24px;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.sidebar__menu li:hover {
+  opacity: 0.5;
+}
+.sidebar .footer__buttons {
+  display: flex;
+  margin-bottom: 16px;
+}
+.sidebar .footer__buttons .nav-link:last-child .nav-link__link {
+  margin: 0;
+}
+.sidebar .footer__contacts {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.sidebar .contacts__mail {
+  margin-bottom: 12px;
+}
+.sidebar .contacts__phone {
+  font-family: 'TTLakesBold';
+  font-size: 24px;
+}
+.menu--active {
+  color: #7e7e82;
+}
+.menu--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #41f6d7;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.close-menu-btn {
+  cursor: pointer;
+}
+.language-buttons button:not(:last-child) {
+  margin-right: 8px;
+}
+.language-buttons--active {
+  color: #7e7e82;
+}
